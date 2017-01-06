@@ -1,0 +1,20 @@
+{
+  "manifest_version": 2,
+
+  "name": "iframe manipulation extension example",
+  "description": "This extension allows to run scripts that manipulate cross domain IFRAME contents.",
+  "version": "1.0",
+
+  "permissions": [
+    "*://clarin.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://clarin.com/*"
+      ],
+      "js": ["popup.js"],
+      "all_frames": true
+    }
+  ]
+}
