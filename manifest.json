@@ -1,20 +1,21 @@
 {
   "manifest_version": 2,
 
-  "name": "iframe manipulation extension example",
-  "description": "This extension allows to run scripts that manipulate cross domain IFRAME contents.",
-  "version": "1.0",
+  "name": "Bypass Clarín & La Nación registration",
+  "description": "This extension let you bypass the obligatory registration on Clarín and La Nación",
+  "version": "0.1",
 
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [{
+       "matches":    ["*://*/*"],
+       "js":         ["popup.js"],
+       "all_frames": true
+   }],
   "permissions": [
-    "*://clarin.com/*"
-  ],
-  "content_scripts": [
-    {
-      "matches": [
-        "*://clarin.com/*"
-      ],
-      "js": ["popup.js"],
-      "all_frames": true
-    }
+    "activeTab",
+    "*://*/*"
   ]
 }
