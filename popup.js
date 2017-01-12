@@ -1,5 +1,4 @@
 setTimeout(function(){
-    var url = window.location.href;
 
     if (location.hostname.match("clarin")){
         var elements = document.querySelectorAll('div.modal-pase');
