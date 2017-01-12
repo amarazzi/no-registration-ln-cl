@@ -1,20 +1,28 @@
-const TIME = 4000;
+function bypassRegistration() {
 
-setTimeout(function(){
+  const TIME = 4000;
+  const CLARIN_MODAL_SELECTOR = 'div.modal-pase';
+  const CLARIN_OVERFLOW = ".no-js";
+  const LANACION_MODAL_SELECTOR = 'div.pantalla-completa';
 
-    var hostname = window.location.hostname;
+  setTimeout(function(){
 
-    if (hostname.match("clarin")){
-        var elements = document.querySelectorAll('div.modal-pase');
-        var overflow = document.querySelector(".no-js");
-        overflow.style.overflowY = 'scroll';
+      var hostname = window.location.hostname;
 
-    }else if (hostname.match("lanacion")) {
-        var elements = document.querySelectorAll('div.pantalla-completa');
-    }
+      if (hostname.match("clarin")){
+          var elements = document.querySelectorAll(CLARIN_MODAL_SELECTOR);
+          var overflow = document.querySelector(CLARIN_OVERFLOW);
+          overflow.style.overflowY = 'scroll';
 
-    elements.forEach(function(e) {
-        e.remove();
-    });
+      }else if (hostname.match("lanacion")) {
+          var elements = document.querySelectorAll(LANACION_MODAL_SELECTOR);
+      }
 
-}, TIME);
+      elements.forEach(function(e) {
+          e.remove();
+      });
+
+  }, TIME);
+}
+
+bypassRegistration();
