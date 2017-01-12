@@ -1,17 +1,17 @@
 setTimeout(function(){
     var url = window.location.href;
 
-    if (url.indexOf("clarin") > 0){
-        var elemCL = document.querySelectorAll('div.modal-pase');
-        elemCL.forEach(function(e) {
-            e.remove();
-        });
-
+    if (location.hostname.match("clarin")){
+        var elements = document.querySelectorAll('div.modal-pase');
         var overflow = document.querySelector(".no-js");
         overflow.style.overflowY = 'scroll';
 
-    }else if (url.indexOf("lanacion") > 0) {
-        document.querySelector('div.pantalla-completa').remove();
+    }else if (location.hostname.match("lanacion")) {
+        var elements = document.querySelectorAll('div.pantalla-completa');
     }
+
+    elements.forEach(function(e) {
+        e.remove();
+    });
 
 }, 4000);
