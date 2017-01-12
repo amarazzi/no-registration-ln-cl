@@ -1,11 +1,15 @@
+const TIME = 4000;
+
 setTimeout(function(){
 
-    if (location.hostname.match("clarin")){
+    var hostname = window.location.hostname;
+
+    if (hostname.match("clarin")){
         var elements = document.querySelectorAll('div.modal-pase');
         var overflow = document.querySelector(".no-js");
         overflow.style.overflowY = 'scroll';
 
-    }else if (location.hostname.match("lanacion")) {
+    }else if (hostname.match("lanacion")) {
         var elements = document.querySelectorAll('div.pantalla-completa');
     }
 
@@ -13,4 +17,4 @@ setTimeout(function(){
         e.remove();
     });
 
-}, 4000);
+}, TIME);
